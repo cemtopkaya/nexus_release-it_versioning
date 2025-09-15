@@ -1,0 +1,21 @@
+{
+    "name": "Simple Dev Container",
+    "dockerComposeFile": "./docker-compose.yml",
+    "service": "devcontainer",
+    "runServices": [
+        "devcontainer",
+        "nexus"
+    ],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "streetsidesoftware.code-spell-checker"
+            ]
+        }
+    },
+    "workspaceFolder": "/workspace",
+    "forwardPorts": [
+        3000
+    ],
+    "remoteUser": "root"
+}

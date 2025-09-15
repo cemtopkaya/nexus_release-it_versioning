@@ -1,0 +1,13 @@
+{
+  "git": {
+    "requireCleanWorkingDir": false,
+    "commitMessage": "Release ${version}",
+    "tagName": "v${version}",
+    "push": true,
+    "repo": "https://bitweb.telenity.com/scm/~cemt/versioning.git"
+  },
+  "npm": {
+    "publish": true,
+    "registry": "http://nexus:8081/repository/npm-releases/"
+  }
+}

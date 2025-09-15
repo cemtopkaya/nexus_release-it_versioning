@@ -1,6 +1,9 @@
 {
-  "name": "surum",
-  "version": "4.0.1-SNAPSHOT.0",
+  "name": "@telenity/surum",
+  "version": "4.0.1-SNAPSHOT.1",
+  "publishConfig": {
+    "registry": "http://nexus:8081/repository/npm-releases/"
+  },
   "description": "",
   "main": "index.js",
   "scripts": {
