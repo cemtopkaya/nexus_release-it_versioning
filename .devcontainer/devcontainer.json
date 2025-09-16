@@ -28,5 +28,6 @@
     "forwardPorts": [
         3000
     ],
-    "remoteUser": "root"
+    "remoteUser": "root",
+    "postCreateCommand": "apt-get update && apt-get install -y nano"
 }
