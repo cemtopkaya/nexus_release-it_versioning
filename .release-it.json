@@ -1,7 +1,7 @@
 {
   "git": {
     "requireCleanWorkingDir": true,
-    "commitMessage": "Release ${version}",
+    "commitMessage": "@ornekKapsam/surum-30 -- Zabbix media template should ignore events without canvas_alarm tag",
     "tagName": "v${version}",
     "push": true,
     "repo": "https://bitweb.telenity.com/scm/~cemt/versioning.git"
@@ -9,5 +9,46 @@
   "npm": {
     "publish": true,
     "registry": "http://nexus:8081/repository/npm-releases/"
+  },
+  "plugins": {
+    "@release-it/conventional-changelog": {
+      "preset": "angular",
+      "infile": "CHANGELOG.md",
+      "header": "# Changelog\n\nAll notable changes to this project will be documented in this file.\n",
+      "ignoreRecommendedBump": false,
+      "strictSemVer": true,
+      "context": {
+        "linkCompare": true,
+        "linkReferences": true
+      },
+      "gitRawCommitsOpts": {
+        "format": "%B%n-hash-%n%H%n-gitTags-%n%d%n-committerDate-%n%ci"
+      },
+      "parserOpts": {
+        "noteKeywords": [
+          "BREAKING CHANGE",
+          "BREAKING CHANGES"
+        ],
+        "issuePrefixes": [
+          "PROJ-",
+          "BUG-",
+          "FEAT-"
+        ]
+      },
+      "writerOpts": {
+        "commitGroupsSort": "title",
+        "commitsSort": [
+          "scope",
+          "subject"
+        ],
+        "noteGroupsSort": "title"
+      }
+    }
+  },
+  "hooks": {
+    "after:release": [
+      "echo 'Deployed to staging environment'",
+      "npm run deploy:staging"
+    ]
   }
 }
