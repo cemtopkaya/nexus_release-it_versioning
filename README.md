@@ -107,3 +107,38 @@ NPM Kullanıcı girişi (`--registry`):
 ```sh
 npm login --registry http://nexus:8081/repository/npm-paket-deposu/
 ```
+
+# Git İşlemleri
+
+### .gitmessage İle commit mesajı oluşturma
+
+```sh
+cat > .gitmessage <<EOF
+# ===========================================
+# JIRA commit mesajı standartına göre:
+# 
+# Satır 1: Jira bilet numarası: kısaca ne yaptığımızı açıklayan bir kısaca açıklama.
+# Satır 2: Boş bırakılacak
+# Satır 3: Tafsilat burada olacak. Madde madde bu değişimi
+# - neden yaptık, 
+# - neyi etkiledi,
+# - gerekiyorsa ek bilgiler
+# ===========================================
+
+# Line 1: JIRA ID + short title (max 50 characters)
+# Example: PROJ-123: Fixed login error
+
+<ISSUE-ID>: <Short and concise title>
+
+# -------------------------------------------
+# Line 2: Leave empty
+# -------------------------------------------
+
+# Line 3 and onwards: More detailed description (optional)
+# - Why was this change made?
+# - Which components are affected?
+# - Add any additional notes if necessary
+
+# Tip: Lines starting with '#' will not be included in the commit
+EOF
+```

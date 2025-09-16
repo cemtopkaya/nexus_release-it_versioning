@@ -1,5 +1,12 @@
 # ===========================================
 # Commit Message Template (JIRA format)
+# 
+# Satır 1: Jira bilet numarası: kısaca ne yaptığımızı açıklayan bir kısaca açıklama.
+# Satır 2: Boş bırakılacak
+# Satır 3: Tafsilat burada olacak. Madde madde bu değişimi
+# - neden yaptık, 
+# - neyi etkiledi,
+# - gerekiyorsa ek bilgiler
 # ===========================================
 
 # Line 1: JIRA ID + short title (max 50 characters)
@@ -10,6 +17,8 @@
 # -------------------------------------------
 # Line 2: Leave empty
 # -------------------------------------------
+
+<More detailed description (optional)>
 
 # Line 3 and onwards: More detailed description (optional)
 # - Why was this change made?
