@@ -1,8 +1,8 @@
 {
-  "name": "@telenity/surum",
+  "name": "@ornekKapsam/surum",
   "version": "4.0.1-SNAPSHOT.2",
   "publishConfig": {
-    "registry": "http://nexus:8081/repository/npm-releases/"
+    "registry": "http://nexus:8081/repository/npm-paket-deposu/"
   },
   "description": "",
   "main": "index.js",
@@ -11,5 +11,9 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@release-it/conventional-changelog": "^10.0.1",
+    "release-it": "^19.0.4"
+  }
 }

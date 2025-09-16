@@ -1,4 +1,14 @@
+name: release-it_project
+
 services:
+  devcontainer:
+    image: ubuntu:24.04
+    container_name: devcontainer
+    command: tail -f /dev/null
+    volumes:
+      - ..:/workspace:cached
+      - /var/run/docker.sock:/var/run/docker.sock
+
   nexus:
     container_name: nexus
     image: sonatype/nexus3:3.83.2
@@ -12,10 +22,3 @@ services:
         reservations:
           cpus: '2'
           memory: 2G
-
-  devcontainer:
-    image: telenity/devcontainer/react:latest
-    container_name: devcontainer
-    command: tail -f /dev/null
-    volumes:
-      - ..:/workspace:cached
