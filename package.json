@@ -19,7 +19,7 @@
   "release-it": {
     "git": {
       "requireCleanWorkingDir": true,
-      "commitMessage": "DENEME-17 - ${message}",
+      "commitMessage": "${JIRA_ID} -- Release ${name}@${version}",
       "tagName": "${name}-${version}",
       "push": true,
       "repo": "https://bitweb.telenity.com/scm/~cemt/versioning.git"
@@ -35,6 +35,17 @@
         },
         "infile": "CHANGELOG.md"
       }
+    },
+    "hooks": {
+      "before:init": [
+        "echo 'Extracting Jira issue ID from current branch...'",
+        "export JIRA_ID=$(git branch --show-current | grep -oE '[A-Z]+-[0-9]+' | head -1 || echo 'NO-JIRA')",
+        "echo \"Using Jira ID: $JIRA_ID\""
+      ],
+      "after:release": [
+        "echo 'Deployed to staging environment'",
+        "npm run deploy:staging"
+      ]
     }
   }
 }
