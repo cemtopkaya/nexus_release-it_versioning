@@ -42,6 +42,7 @@
       "registry": "http://nexus:8081/repository/npm-releases/"
     },
     "hooks": {
+      "before:git:push": "if [[ ${version} == *SNAPSHOT* ]]; then echo 'Skipping push for SNAPSHOT'; export RELEASE_IT_PUSH_NO=true; fi",
       "before:init": "echo -n JIRA_ID=$(git log -n1 --pretty=format:%s | cut -d' ' -f1 | xargs) > .env"
     }
   }
