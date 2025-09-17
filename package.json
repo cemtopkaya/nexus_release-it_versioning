@@ -20,7 +20,8 @@
   "release-it": {
     "git": {
       "requireCleanWorkingDir": true,
-      "commitMessage": "${JIRA_ID} -- Release ${name}@${version}",
+          "commitMessage": "$(git log -n1 --pretty=format:%s | cut -d'-' -f1 | xargs) -- Release ${name}@${version}"
+
       "tagName": "${name}-${version}",
       "push": true,
       "repo": "https://bitweb.telenity.com/scm/~cemt/versioning.git"
@@ -30,7 +31,6 @@
       "registry": "http://nexus:8081/repository/npm-releases/"
     },
     "hooks": {
-      "before:init": "JIRA_ID=$(git log -n1 --pretty=format:%s | cut -d' ' -f1 | xargs)"
     }
   }
 }
