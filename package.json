@@ -28,14 +28,6 @@
     "npm": {
       "publish": false,
       "registry": "http://nexus:8081/repository/npm-releases/"
-    },
-    "plugins": {
-      "@release-it/conventional-changelog": {
-        "preset": {
-          "name": "angular"
-        },
-        "infile": "CHANGELOG.md"
-      }
     }
   }
 }
