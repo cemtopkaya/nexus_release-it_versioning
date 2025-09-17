@@ -38,7 +38,7 @@
     },
     "hooks": {
       "before:init": [  
-        "export JIRA_ID=$(git branch --show-current | grep -oE '[A-Z]+-[0-9]+' | head -n1 || echo 'NO-ISSUE')"
+        "export JIRA_ID=$(git log -n1 --pretty=format:%s | cut -d'-' -f1 | xargs)"
       ],
       "after:release": [
         "echo 'Deployed to staging environment'",
