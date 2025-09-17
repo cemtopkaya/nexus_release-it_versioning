@@ -8,7 +8,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "release-it": "npx release-it --config package.json --context 'JIRA_ID=$(git log -n1 --pretty=format:%s | cut -d- -f1 | xargs)'"
+    "release-it": "npx release-it --config package.json --context 'JIRA_ID=$(git log -n1 --pretty=format:%s | cut -d' ' -f1 | xargs)'"
   },
   "keywords": [],
   "author": "",
