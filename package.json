@@ -38,9 +38,9 @@
       }
     },
     "hooks": {
-      "before:init": [  
-        "export JIRA_ID=$(git log -n1 --pretty=format:%s | cut -d'-' -f1 | xargs)"
-      ],
+      // "before:init": [  
+      //   "export JIRA_ID=$(git log -n1 --pretty=format:%s | cut -d'-' -f1 | xargs)"
+      // ],
       "after:release": [
         "echo 'Deployed to staging environment'",
         "npm run deploy:staging"
