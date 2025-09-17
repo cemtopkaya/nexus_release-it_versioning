@@ -1,6 +1,6 @@
 {
   "name": "@ornekKapsam/surum",
-  "version": "6.0.0-SNAPSHOT.0",
+  "version": "7.0.0-SNAPSHOT.0",
   "publishConfig": {
     "registry": "http://nexus:8081/repository/npm-paket-deposu/"
   },
@@ -11,14 +11,12 @@
     "jiraid": "git log -n1 --pretty=format:%s | cut -d' ' -f1 | xargs > .jiraid",
     "rit": "release-it --config package.json",
     "release:minor": "npm run rit -- minor",
+    "release:premajor:snapshot": "npm run rit -- premajor --preReleaseId SNAPSHOT",
+    "release:jiraid:premajor:snapshot": "JIRA_ID=$(npm run -s jiraid) npm run release:premajor:snapshot",
     "release:major": "npm run rit -- major",
     "release:patch": "npm run rit -- patch",
     "release:prepatch:snapshot": "npm run rit -- prepatch --preReleaseId SNAPSHOT",
     "release:preminor:snapshot": "npm run rit -- preminor --preReleaseId SNAPSHOT",
-    "release:premajor:snapshot": "npm run rit -- premajor --preReleaseId SNAPSHOT",
-    "release:jiraid:premajor:snapshot": "npm run jiraid && JIRA_ID=$(cat .jiraid) npm run release:premajor:snapshot",
-    "release:beta": "npm run rit -- --preRelease=beta",
-    "release:alpha": "npm run rit -- --preRelease=alpha",
     "release:dry": "npm run rit -- --dry-run",
     "release:ci": "npm run rit -- --ci",
     "release:prepatch": "export JIRA_ID=$(git log -n1 --pretty=format:%s | cut -d' ' -f1 | xargs) && npx release-it --config package.json --preReleaseId SNAPSHOT"
