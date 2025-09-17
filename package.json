@@ -37,8 +37,8 @@
       }
     },
     "hooks": {
-      "before:init": [
-        "echo -n 'Enter JIRA Issue ID: '; read issue_id; export ISSUE_ID=$issue_id"
+      "before:init": [  
+        "export JIRA_ID=$(git branch --show-current | grep -oE '[A-Z]+-[0-9]+' | head -n1 || echo 'NO-ISSUE')"
       ],
       "after:release": [
         "echo 'Deployed to staging environment'",
