@@ -16,6 +16,7 @@
     "rit:preminor": "npm run rit -- preminor --preReleaseId SNAPSHOT",
     "rit:patch": "npm run rit -- patch",
     "rit:prepatch": "npm run rit -- prepatch --preReleaseId SNAPSHOT",
+    "rit:prepatch:preid": "npm run rit -- --preReleaseId SNAPSHOT",
     "rit:dry": "npm run rit -- --dry-run",
     "rit:ci": "npm run rit -- --ci"
   },
