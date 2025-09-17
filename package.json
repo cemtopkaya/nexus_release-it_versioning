@@ -27,6 +27,7 @@
     },
     "npm": {
       "publish": false,
+      "preReleaseId": "cem",
       "registry": "http://nexus:8081/repository/npm-releases/"
     },
     "hooks": {
