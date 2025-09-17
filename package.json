@@ -12,7 +12,7 @@
     "rit": "release-it --config package.json",
     "release:premajor:snapshot": "npm run rit -- premajor --preReleaseId SNAPSHOT",
     "release:jiraid:premajor:snapshot": "npm run release:premajor:snapshot",
-    "release:jiraid:premajor:snapshot-old": "JIRA_ID=$(npm run jiraid) npm run release:premajor:snapshot",
+    "release:jiraid:premajor:snapshot-old": "npm run release:premajor:snapshot",
     "release:minor": "npm run rit -- minor",
     "release:major": "npm run rit -- major",
     "release:patch": "npm run rit -- patch",
@@ -43,7 +43,10 @@
       "registry": "http://nexus:8081/repository/npm-releases/"
     },
     "hooks": {
-      "before:init": "export JIRA_ID=$(git log -n1 --pretty=format:%s | cut -d' ' -f1 | xargs)"
+      "before:init": [
+        "export JIRA_ID=$(git log -n1 --pretty=format:%s | cut -d' ' -f1 | xargs)",
+        "echo cemo"
+      ]
     }
   }
 }
