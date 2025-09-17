@@ -12,7 +12,7 @@
     "rit": "release-it --config package.json",
     "release:minor": "npm run rit -- minor",
     "release:premajor:snapshot": "npm run rit -- premajor --preReleaseId SNAPSHOT",
-    "release:jiraid:premajor:snapshot": "JIRA_ID=$(run-s jiraid) npm run release:premajor:snapshot",
+    "release:jiraid:premajor:snapshot": "JIRA_ID=$(npm run jiraid) npm run release:premajor:snapshot",
     "release:major": "npm run rit -- major",
     "release:patch": "npm run rit -- patch",
     "release:prepatch:snapshot": "npm run rit -- prepatch --preReleaseId SNAPSHOT",
