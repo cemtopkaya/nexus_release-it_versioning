@@ -30,7 +30,7 @@
       "registry": "http://nexus:8081/repository/npm-releases/"
     },
     "hooks": {
-      "before:init": "jiraId=$(git log -n1 --pretty=format:%s | cut -d' ' -f1 | xargs)"
+      "before:init": "JIRA_ID=$(git log -n1 --pretty=format:%s | cut -d' ' -f1 | xargs)"
     }
   }
 }
