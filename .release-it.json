@@ -13,8 +13,7 @@
   "plugins": {},
   "hooks": {
     "before:init": [
-      "echo 'Extracting issue ID from branch name...'",
-      "export ISSUE_ID=$(git branch --show-current | grep -oE '[A-Z]+-[0-9]+' | head -n1 || true)"
+      "read -p 'Enter JIRA Issue ID: ' issue_id; export ISSUE_ID=$issue_id"
     ]
   }
 }
