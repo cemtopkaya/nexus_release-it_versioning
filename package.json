@@ -44,7 +44,8 @@
       "registry": "http://nexus:8081/repository/npm-releases/"
     },
     "hooks": {
-      "before:init": "read -p 'Enter JIRA ID: ' JIRA_ID && echo \"JIRA_ID=$JIRA_ID\" > .env"
+      "cem:before:init": "read -p 'Enter JIRA ID: ' JIRA_ID && echo \"JIRA_ID=$JIRA_ID\" > .env",
+      "before:init": "JIRA_ID=$(git log -n1 --pretty=format:%s | cut -d' ' -f1) && echo JIRA_ID > .env"
     }
   }
 }
