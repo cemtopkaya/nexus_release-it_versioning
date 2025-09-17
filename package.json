@@ -10,6 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "jiraid": "git log -n1 --pretty=format:%s | cut -d' ' -f1 | xargs > .jiraid",
     "rit": "dotenv -e .env -- release-it --config package.json",
+    "rit:preid": "npm run rit -- --preReleaseId SNAPSHOT",
     "__major___": "____________________________________________________________",
     "rit:major": "npm run rit -- major",
     "rit:premajor": "npm run rit -- premajor --preReleaseId SNAPSHOT",
