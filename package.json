@@ -22,6 +22,7 @@
       "requireCleanWorkingDir": true,
       "commitMessage": "${process.env.JIRA_ID} -- Release ${name}@${version}",
       "tagName": "${name}-${version}",
+      "preReleaseId": "cem",
       "push": true,
       "repo": "https://bitweb.telenity.com/scm/~cemt/versioning.git"
     },
