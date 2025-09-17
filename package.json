@@ -15,5 +15,26 @@
   "devDependencies": {
     "@release-it/conventional-changelog": "^10.0.1",
     "release-it": "^19.0.4"
+  },
+  "release-it": {
+    "git": {
+      "requireCleanWorkingDir": true,
+      "commitMessage": "DENEME-17 - ${message}",
+      "tagName": "${name}-${version}",
+      "push": true,
+      "repo": "https://bitweb.telenity.com/scm/~cemt/versioning.git"
+    },
+    "npm": {
+      "publish": false,
+      "registry": "http://nexus:8081/repository/npm-releases/"
+    },
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "preset": {
+          "name": "angular"
+        },
+        "infile": "CHANGELOG.md"
+      }
+    }
   }
 }
