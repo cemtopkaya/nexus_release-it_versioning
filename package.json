@@ -12,7 +12,7 @@
     "release:minor": "npm run rit -- minor",
     "release:major": "npm run rit -- major",
     "release:patch": "npm run rit -- patch",
-    "release:snapshot": "npm run rit -- --preReleaseId SNAPSHOT",
+    "release:snapshot": "npm run rit -- prepatch --preReleaseId SNAPSHOT",
     "release:beta": "npm run rit -- --preRelease=beta",
     "release:alpha": "npm run rit -- --preRelease=alpha",
     "release:dry": "npm run rit -- --dry-run",
