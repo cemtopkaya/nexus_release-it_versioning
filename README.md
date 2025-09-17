@@ -1,5 +1,19 @@
 # release-it Deneme
 
+## release-it Notları
+
+Release-it’in kendi sağladığı değişkenler
+Bunlar JSON config şablonlama sırasında otomatik dolduruluyor.
+Resmî dokümana göre commitMessage, tagName, releaseName vb. yerlerde kullanılabilen değişkenler şunlar:
+
+- `${name}` → `package.json` içindeki name
+- `${version}` → çıkartılacak yeni sürüm
+- `${latestVersion}` → önceki sürüm
+- `${tagName}` → üretilen tag
+- `${repo.host}`, `${repo.owner}`, `${repo.project}` vs. → repo bilgileri
+- `${changelog}` → git changelog çıktısı
+
+
 ### 1. Nexus admin kullanıcısına yeni şifre atayalım
 
 ```sh
