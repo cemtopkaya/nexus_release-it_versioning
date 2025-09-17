@@ -1,6 +1,6 @@
 {
   "name": "@ornekKapsam/surum",
-  "version": "5.0.0-SNAPSHOT.0",
+  "version": "6.0.0-SNAPSHOT.0",
   "publishConfig": {
     "registry": "http://nexus:8081/repository/npm-paket-deposu/"
   },
@@ -16,7 +16,7 @@
     "release:prepatch:snapshot": "npm run rit -- prepatch --preReleaseId SNAPSHOT",
     "release:preminor:snapshot": "npm run rit -- preminor --preReleaseId SNAPSHOT",
     "release:premajor:snapshot": "npm run rit -- premajor --preReleaseId SNAPSHOT",
-    "release:jiraid:premajor:snapshot": "JIRA_ID=$(cat .jiraid) npm run release:premajor:snapshot",
+    "release:jiraid:premajor:snapshot": "npm run jiraid && JIRA_ID=$(cat .jiraid) npm run release:premajor:snapshot",
     "release:beta": "npm run rit -- --preRelease=beta",
     "release:alpha": "npm run rit -- --preRelease=alpha",
     "release:dry": "npm run rit -- --dry-run",
