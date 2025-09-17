@@ -2,7 +2,7 @@
   "git": {
     "requireCleanWorkingDir": true,
     "commitMessage": "<issue_id> -- <message>  ${message}",
-    "tagName": "${name}-${version}",
+    "tagName": "${pkg.name}-${version}",
     "push": true,
     "repo": "https://bitweb.telenity.com/scm/~cemt/versioning.git"
   },
