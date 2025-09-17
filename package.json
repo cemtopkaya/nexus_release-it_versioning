@@ -33,7 +33,7 @@
   "release-it": {
     "git": {
       "requireCleanWorkingDir": true,
-      "commitMessage": "${process.env.JIRA_ID} ${JIRA_ID} -- Release ${name}@${version}",
+      "commitMessage": "${process.env.JIRA_ID} ${process.env.JIRA_ID} -- Release ${name}@${version}",
       "tagName": "${name}-${version}",
       "push": true,
       "repo": "https://bitweb.telenity.com/scm/~cemt/versioning.git"
@@ -43,10 +43,7 @@
       "registry": "http://nexus:8081/repository/npm-releases/"
     },
     "hooks": {
-      "before:init": [
-        "export JIRA_ID=$(git log -n1 --pretty=format:%s | cut -d' ' -f1 | xargs)",
-        "echo \"cemo $JIRA_ID\""
-      ]
+      "before:init": "JIRA_ID=$(git log -n1 --pretty=format:%s | cut -d' ' -f1) && export JIRA_ID"
     }
   }
 }
