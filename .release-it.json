@@ -10,10 +10,5 @@
     "publish": false,
     "registry": "http://nexus:8081/repository/npm-releases/"
   },
-  "plugins": {},
-  "hooks": {
-    "before:init": [
-      "read -p 'Enter JIRA Issue ID: ' issue_id; export ISSUE_ID=$issue_id"
-    ]
-  }
+  "plugins": {}
 }
