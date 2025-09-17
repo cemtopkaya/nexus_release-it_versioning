@@ -1,7 +1,7 @@
 {
   "git": {
     "requireCleanWorkingDir": true,
-    "commitMessage": "issue_id - message",
+    "commitMessage": "${env.ISSUE_ID} - message",
     "tagName": "${name}-${version}",
     "push": true,
     "repo": "https://bitweb.telenity.com/scm/~cemt/versioning.git"
@@ -12,9 +12,9 @@
   },
   "plugins": {},
   "hooks": {
-    "after:release": [
-      "echo 'Deployed to staging environment'",
-      "npm run deploy:staging"
+    "before:init": [
+      "echo 'Extracting issue ID from branch name...'",
+      "export ISSUE_ID=$(git branch --show-current | grep -oE '[A-Z]+-[0-9]+' | head -n1 || true)"
     ]
   }
 }
