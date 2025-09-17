@@ -45,7 +45,7 @@
     "hooks": {
       "before:init": [
         "export JIRA_ID=$(git log -n1 --pretty=format:%s | cut -d' ' -f1 | xargs)",
-         "env | grep JIRA_ID"
+        "echo \"cemo $JIRA_ID\""
       ]
     }
   }
