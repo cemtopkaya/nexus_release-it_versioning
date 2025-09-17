@@ -20,7 +20,7 @@
   "release-it": {
     "git": {
       "requireCleanWorkingDir": true,
-      "commitMessage": "${env.JIRA_ID} -- Release ${name}@${version}",
+      "commitMessage": "${JIRA_ID} -- Release ${name}@${version}",
       "tagName": "${name}-${version}",
       "push": true,
       "repo": "https://bitweb.telenity.com/scm/~cemt/versioning.git"
