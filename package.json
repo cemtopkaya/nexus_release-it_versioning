@@ -1,6 +1,6 @@
 {
   "name": "@ornekKapsam/surum",
-  "version": "8.0.0-SNAPSHOT.0",
+  "version": "8.0.0-SNAPSHOT.1",
   "publishConfig": {
     "registry": "http://nexus:8081/repository/npm-paket-deposu/"
   },
