@@ -36,7 +36,7 @@
     "git": {
       "requireCleanWorkingDir": true,
       "commit": true,
-      "tag": false,
+      "tag": true,
       "push": true,
       "commitMessage": "${process.env.JIRA_ID} -- Release ${name}@${version}",
       "tagName": "${name}-${version}",
