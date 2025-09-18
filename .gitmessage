@@ -12,7 +12,7 @@
 # Line 1: JIRA ID + short title (max 50 characters)
 # Example: PROJ-123: Fixed login error
 
-<ISSUE-ID>: <Short and concise title>
+<ISSUE-ID> -- <Short and concise title>
 
 # -------------------------------------------
 # Line 2: Leave empty
